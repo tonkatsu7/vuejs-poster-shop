@@ -12,6 +12,10 @@ new Vue({
     cart: []
   },
   methods: {
+    onSubmit: function () {
+      console.log('SUBMITTED');
+
+    },
     addItem: function(index) {
       // console.log('addItem() called with index=' + index);
       this.total += 9.99;
