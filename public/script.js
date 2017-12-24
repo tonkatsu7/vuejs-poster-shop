@@ -27,17 +27,19 @@ new Vue({
     },
     onSubmit: function () {
       // console.log('SUBMITTED='.concat(this.$http));
-      this.items = [];
-      this.loading = true;
-      this.$http.get('/search/'.concat(this.newSearch))
-        .then(function(resp) {
-          this.lastSearch = this.newSearch;
-          this.results = resp.data;
-          this.appendItems();
-          // console.log(resp);
-          this.loading = false;
-        })
-      ;
+      if (this.newSearch.length) {
+        this.items = [];
+        this.loading = true;
+        this.$http.get('/search/'.concat(this.newSearch))
+          .then(function(resp) {
+            this.lastSearch = this.newSearch;
+            this.results = resp.data;
+            this.appendItems();
+            // console.log(resp);
+            this.loading = false;
+          })
+        ;
+      }
     },
     addItem: function(index) {
       // console.log('addItem() called with index='.concat(index));
