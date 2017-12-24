@@ -13,9 +13,11 @@ new Vue({
     addItem: function(index) {
       // console.log('addItem() called with index=' + index);
       this.total += 9.99;
-      this.cart.push(this.items[index]);
-      // console.log(this.cart.length);
-
+      var item = this.items[index];
+      this.cart.push({
+        title: item.title,
+        qty: 1
+      });
     }
   }
 });
