@@ -1,3 +1,5 @@
+var PRICE = 9.99;
+
 new Vue({
   el: '#app',
   data: {
@@ -25,7 +27,8 @@ new Vue({
         this.cart.push({
           id: item.id,
           title: item.title,
-          qty: 1
+          qty: 1,
+          price: PRICE
         });
       }
     }
