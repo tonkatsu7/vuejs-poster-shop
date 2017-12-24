@@ -9,15 +9,15 @@ new Vue({
       { id: 2, title: "Item 2"},
       { id: 3, title: "Item 3"}
     ],
-    cart: []
+    cart: [],
+    search: ''
   },
   methods: {
     onSubmit: function () {
-      console.log('SUBMITTED');
-
+      console.log('SUBMITTED='.concat(this.search));
     },
     addItem: function(index) {
-      // console.log('addItem() called with index=' + index);
+      // console.log('addItem() called with index='.concat(index));
       this.total += 9.99;
       var item = this.items[index];
       var found = false;
